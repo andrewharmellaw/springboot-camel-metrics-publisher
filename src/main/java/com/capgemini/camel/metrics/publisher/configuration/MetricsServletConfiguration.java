@@ -48,17 +48,17 @@ public class MetricsServletConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MetricsServletConfiguration.class);
 
-    @Value("${statsd.host}")
+    @Value("${statsd.host:127.0.0.1}")
     private String metricsReporterHost;
-    @Value("${statsd.port}")
+    @Value("${statsd.port:8125}")
     private int metricsReporterPort;
-    @Value("${statsd.pollingPeriodInSeconds}")
+    @Value("${statsd.pollingPeriodInSeconds:5}")
     private int pollingPeriodInSeconds;
-    @Value("${monitoring.servlets.path}")
+    @Value("${monitoring.servlets.path:/monitoring}")
     private String monitoringServletsPath;
-    @Value("${metrics.prefix}")
+    @Value("${metrics.prefix:/metrics}")
     private String metricsPrefix;
-    @Value("${response.code.metrics.filter.url}")
+    @Value("${response.code.metrics.filter.url:/api/v1}")
     private String responseCodeMetricsFilterUrl;
 
     /**
