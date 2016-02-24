@@ -44,9 +44,9 @@ import static com.codahale.metrics.MetricRegistry.name;
  * @author Simon Irving
  */
 @Configuration
-public class MetricsConfiguration {
+public class MetricsServletConfiguration {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MetricsConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MetricsServletConfiguration.class);
 
     @Value("${statsd.host}")
     private String metricsReporterHost;
@@ -88,9 +88,9 @@ public class MetricsConfiguration {
     }
 
     /**
-     * Setup the Codahale Metrics Register bean and the Statsd/Graphite reporter
+     * Setup the Codahale MetricRegistry bean and the Statsd/Graphite reporter
      *
-     * @return the Codahale Metrics Register bean
+     * @return the Codahale MetricRegistry bean
      */
     @Bean(name = "metricRegistry")
     public MetricRegistry codahaleMetricsRegistry() {
