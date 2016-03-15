@@ -1,15 +1,32 @@
-plugins {
-    id 'net.researchgate.release' version '2.3.4'
-}
-
 group 'com.capgemini'
+description = """Spring-Boot-Camel Metrics Publisher """
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url "http://dl.bintray.com/capgeminiuk/maven/"
+        }
+    }
+    dependencies {
+        classpath("net.researchgate:gradle-release:2.3.5")
+    }
+}
 
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'net.researchgate.release'
 
 repositories {
-    mavenLocal()
     mavenCentral()
+    mavenLocal()
+    maven {
+        url "http://dl.bintray.com/capgeminiuk/maven/"
+    }
 }
 
 dependencies {
@@ -24,7 +41,7 @@ dependencies {
     compile     group: 'com.capgemini',             name: 'codahale-metrics-filters',           version: '0.10.0'
     compile     group: 'joda-time',                 name: 'joda-time',                          version: '2.3'
     compile     group: 'org.slf4j',                 name: 'slf4j-api',                          version: '1.7.7'
-
+	
     testCompile group: 'junit',                     name: 'junit',                              version: '4.11'
 }
 
