@@ -9,12 +9,14 @@ import javax.servlet.ServletContextListener;
 
 import com.bealetech.metrics.reporting.Statsd;
 import com.bealetech.metrics.reporting.StatsdReporter;
+import com.capgemini.camel.metrics.publisher.CamelMetricsUpdater;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.jvm.GarbageCollectorMetricSet;
 import com.codahale.metrics.jvm.MemoryUsageGaugeSet;
 import com.codahale.metrics.jvm.ThreadStatesGaugeSet;
 import com.codahale.metrics.servlets.MetricsServlet;
 import com.codahale.metrics.servlets.ThreadDumpServlet;
+
 import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.hystrix.contrib.codahalemetricspublisher.HystrixCodaHaleMetricsPublisher;
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
@@ -104,6 +106,19 @@ public class MetricsServletConfiguration {
 
         LOGGER.info("Codahale Statsd Reporter for MetricRegistry started");
         return registry;
+    }
+
+    /**
+     *
+     *
+     * @return
+     */
+    @Bean(name = "camelMetricsUpdater")
+    public CamelMetricsUpdater camelMetricsRegistry() {
+        CamelMetricsUpdater updater = new CamelMetricsUpdater();
+        LOGGER.info("CamelMetricsUpdater created");
+
+        return updater;
     }
 
     /**
