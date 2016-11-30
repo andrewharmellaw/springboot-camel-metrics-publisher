@@ -37,7 +37,7 @@ dependencies {
     compile     group: 'com.netflix.hystrix',       name: 'hystrix-core',                       version: '1.4.0-RC4'
     compile     group: 'com.netflix.hystrix',       name: 'hystrix-codahale-metrics-publisher', version: '1.4.0-RC4'
     compile     group: 'com.netflix.hystrix',       name: 'hystrix-metrics-event-stream',       version: '1.4.0-RC4'
-    compile     group: 'com.bealetech',             name: 'metrics-statsd',                     version: '3.0.0-CAPGEMINI'
+    compile     group: 'com.bealetech',             name: 'metrics-statsd',                     version: '3.0.2'
     compile     group: 'com.capgemini',             name: 'codahale-metrics-filters',           version: '0.10.0'
     compile     group: 'joda-time',                 name: 'joda-time',                          version: '2.3'
     compile     group: 'org.slf4j',                 name: 'slf4j-api',                          version: '1.7.7'
