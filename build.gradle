@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    compile     group: 'org.springframework.boot' , name: 'spring-boot',                        version: '1.3.1.RELEASE' // need to exclude things we DON'T NEED here
+    compile     group: 'org.springframework.boot' , name: 'spring-boot',                        version: '1.5.4.RELEASE' // need to exclude things we DON'T NEED here
     compile     group: 'org.apache.camel',          name: 'camel-core',                         version: '2.16.1'
     compile     group: 'com.codahale.metrics',      name: 'metrics-jvm',                        version: '3.0.1'
     compile     group: 'com.codahale.metrics',      name: 'metrics-servlets',                   version: '3.0.1'
